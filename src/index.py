@@ -1,5 +1,6 @@
 from docxcompose.composer import Composer
 from docx import Document as Document_compose
+from docx2pdf import convert
 import json
 import math
 import shutil
@@ -18,9 +19,10 @@ names =  data['hovatens']
 taps = data['taps']
 lop = data['lop']
 
-print("Xuất bản hoàn thành mẫu nhán dán cho lớp " +  lop)
+print("Đang xuất mẫu nhãn dán cho lớp " +  lop)
 master = Document_compose( temp_path + "/" + names[0] + " " + str(0) + ".docx")
 composer = Composer(master)
+
 # Lặp qua từng file trong mảng
 for index, name in enumerate(names):
     for i in range(math.ceil(len(taps)/10)):
@@ -32,9 +34,13 @@ for index, name in enumerate(names):
       # Gộp doc vào document master sử dụng composer.append()
       composer.append(doc)
 
-composer.save(output_path + "/" + lop + ".docx")
+outputFileDocPath = output_path + "/" + lop + ".docx"
+composer.save(outputFileDocPath)
 
 # Xóa toàn bộ nội dung trong thư mục
 shutil.rmtree(temp_path)
 
-print("Đã hoàn thành mẫu nhán dán cho lớp " +  lop)
+print("Đã hoàn thành mẫu nhãn dán cho lớp " +  lop)
+print("Đang xuất PDF mẫu nhãn dán cho lớp " +  lop)
+outputFilePdfPath = output_path + "/" + lop + ".pdf"
+convert(outputFileDocPath,  outputFilePdfPath)

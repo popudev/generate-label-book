@@ -13,6 +13,9 @@ const names = data?.hovatens || [];
 const className = data?.lop || "";
 const taps = data?.taps || [];
 
+process.stdout.write("\x1Bc");
+console.clear();
+
 if (!template) {
   console.error("Mẫu nhãn vở không tồn tại !!!");
   exit();
