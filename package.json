@@ -1,0 +1,15 @@
+{
+  "name": "generate_label_book",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "setup": "npm install && pip install -r requirements.txt",
+    "start": "node ./src/index.js && python3 ./src/index.py"
+  },
+  "author": "poppudev",
+  "license": "ISC",
+  "dependencies": {
+    "docxtemplater": "^3.37.12",
+    "pizzip": "^3.1.4"
+  }
+}
