@@ -5,6 +5,12 @@ import json
 import math
 import shutil
 import os
+import glob
+
+def count_files_in_folder(folder_path):
+    file_list = glob.glob(os.path.join(folder_path, '*'))
+    count = len(file_list)
+    return count
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 input_json_path = os.path.join(current_dir, "input.json")
@@ -20,16 +26,16 @@ taps = data['taps']
 lop = data['lop']
 
 print("Đang xuất mẫu nhãn dán cho lớp " +  lop)
-master = Document_compose( temp_path + "/" + names[0] + " " + str(0) + ".docx")
+master = Document_compose( temp_path + "/" + "1.docx")
 composer = Composer(master)
+file_count = count_files_in_folder(temp_path)
 
 # Lặp qua từng file trong mảng
-for index, name in enumerate(names):
-    for i in range(math.ceil(len(taps)/10)):
-      if index == 0 and i == 0:
+for index in range(file_count):
+      if index == 0:
         continue
       # Tạo một Document từ file_name
-      doc = Document_compose(temp_path + "/"  + name + " " + str(i) + ".docx")
+      doc = Document_compose(temp_path + "/" + str(index + 1) + ".docx")
       
       # Gộp doc vào document master sử dụng composer.append()
       composer.append(doc)
