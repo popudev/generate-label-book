@@ -39,11 +39,11 @@ outputArrays.forEach((arr, index_arr) => {
 
     return {
       ...acc,
-      ["hovaten" + stt]: arr?.[index]?.hovaten || "                      ",
+      ["hovaten" + stt]: arr?.[index]?.hovaten || "Đặng Trần Bảo Ngọc",
       ["tap" + stt]: arr?.[index]?.tap || "                    ",
-      ["lop" + stt]: arr?.[index] ? lop : "      ",
-      ["truong" + stt]: arr?.[index] ? truong : "                        ",
-      ["namhoc" + stt]: arr?.[index] ? "2023 - 2024" : "                  ",
+      ["lop" + stt]: arr?.[index] ? lop : "Sáu 8",
+      ["truong" + stt]: arr?.[index] ? truong : "Trường THCS Xuân Diệu",
+      ["namhoc" + stt]: arr?.[index] ? "2023 - 2024" : "2023 - 2024",
     };
   }, {});
 

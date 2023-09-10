@@ -1,0 +1,206 @@
+[
+    {
+        "label": "Composer",
+        "importPath": "docxcompose.composer",
+        "description": "docxcompose.composer",
+        "isExtraImport": true,
+        "detail": "docxcompose.composer",
+        "documentation": {}
+    },
+    {
+        "label": "Document",
+        "importPath": "docx",
+        "description": "docx",
+        "isExtraImport": true,
+        "detail": "docx",
+        "documentation": {}
+    },
+    {
+        "label": "convert",
+        "importPath": "docx2pdf",
+        "description": "docx2pdf",
+        "isExtraImport": true,
+        "detail": "docx2pdf",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "glob",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "glob",
+        "description": "glob",
+        "detail": "glob",
+        "documentation": {}
+    },
+    {
+        "label": "count_files_in_folder",
+        "kind": 2,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "def count_files_in_folder(folder_path):\n    file_list = glob.glob(os.path.join(folder_path, '*'))\n    count = len(file_list)\n    return count\ncurrent_dir = os.path.dirname(os.path.abspath(__file__))\ninput_json_path = os.path.join(current_dir, \"input.json\")\ntemp_path = os.path.join(current_dir, \"temp\")\noutput_path = os.path.join(current_dir, \"output\")\nos.makedirs(output_path, exist_ok=True)\nfile = open(input_json_path, encoding='utf-8')",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "current_dir",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "current_dir = os.path.dirname(os.path.abspath(__file__))\ninput_json_path = os.path.join(current_dir, \"input.json\")\ntemp_path = os.path.join(current_dir, \"temp\")\noutput_path = os.path.join(current_dir, \"output\")\nos.makedirs(output_path, exist_ok=True)\nfile = open(input_json_path, encoding='utf-8')\ndata = json.load(file)\nnames =  data['hovatens']\ntaps = data['taps']\nlop = data['lop']",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "input_json_path",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "input_json_path = os.path.join(current_dir, \"input.json\")\ntemp_path = os.path.join(current_dir, \"temp\")\noutput_path = os.path.join(current_dir, \"output\")\nos.makedirs(output_path, exist_ok=True)\nfile = open(input_json_path, encoding='utf-8')\ndata = json.load(file)\nnames =  data['hovatens']\ntaps = data['taps']\nlop = data['lop']\nprint(\"Đang xuất mẫu nhãn dán cho lớp \" +  lop)",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "temp_path",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "temp_path = os.path.join(current_dir, \"temp\")\noutput_path = os.path.join(current_dir, \"output\")\nos.makedirs(output_path, exist_ok=True)\nfile = open(input_json_path, encoding='utf-8')\ndata = json.load(file)\nnames =  data['hovatens']\ntaps = data['taps']\nlop = data['lop']\nprint(\"Đang xuất mẫu nhãn dán cho lớp \" +  lop)\nmaster = Document_compose( temp_path + \"/\" + \"1.docx\")",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "output_path",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "output_path = os.path.join(current_dir, \"output\")\nos.makedirs(output_path, exist_ok=True)\nfile = open(input_json_path, encoding='utf-8')\ndata = json.load(file)\nnames =  data['hovatens']\ntaps = data['taps']\nlop = data['lop']\nprint(\"Đang xuất mẫu nhãn dán cho lớp \" +  lop)\nmaster = Document_compose( temp_path + \"/\" + \"1.docx\")\ncomposer = Composer(master)",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "file",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "file = open(input_json_path, encoding='utf-8')\ndata = json.load(file)\nnames =  data['hovatens']\ntaps = data['taps']\nlop = data['lop']\nprint(\"Đang xuất mẫu nhãn dán cho lớp \" +  lop)\nmaster = Document_compose( temp_path + \"/\" + \"1.docx\")\ncomposer = Composer(master)\nfile_count = count_files_in_folder(temp_path)\n# Lặp qua từng file trong mảng",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "data = json.load(file)\nnames =  data['hovatens']\ntaps = data['taps']\nlop = data['lop']\nprint(\"Đang xuất mẫu nhãn dán cho lớp \" +  lop)\nmaster = Document_compose( temp_path + \"/\" + \"1.docx\")\ncomposer = Composer(master)\nfile_count = count_files_in_folder(temp_path)\n# Lặp qua từng file trong mảng\nfor index in range(file_count):",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "names",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "names =  data['hovatens']\ntaps = data['taps']\nlop = data['lop']\nprint(\"Đang xuất mẫu nhãn dán cho lớp \" +  lop)\nmaster = Document_compose( temp_path + \"/\" + \"1.docx\")\ncomposer = Composer(master)\nfile_count = count_files_in_folder(temp_path)\n# Lặp qua từng file trong mảng\nfor index in range(file_count):\n      if index == 0:",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "taps",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "taps = data['taps']\nlop = data['lop']\nprint(\"Đang xuất mẫu nhãn dán cho lớp \" +  lop)\nmaster = Document_compose( temp_path + \"/\" + \"1.docx\")\ncomposer = Composer(master)\nfile_count = count_files_in_folder(temp_path)\n# Lặp qua từng file trong mảng\nfor index in range(file_count):\n      if index == 0:\n        continue",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "lop",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "lop = data['lop']\nprint(\"Đang xuất mẫu nhãn dán cho lớp \" +  lop)\nmaster = Document_compose( temp_path + \"/\" + \"1.docx\")\ncomposer = Composer(master)\nfile_count = count_files_in_folder(temp_path)\n# Lặp qua từng file trong mảng\nfor index in range(file_count):\n      if index == 0:\n        continue\n      # Tạo một Document từ file_name",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "master",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "master = Document_compose( temp_path + \"/\" + \"1.docx\")\ncomposer = Composer(master)\nfile_count = count_files_in_folder(temp_path)\n# Lặp qua từng file trong mảng\nfor index in range(file_count):\n      if index == 0:\n        continue\n      # Tạo một Document từ file_name\n      doc = Document_compose(temp_path + \"/\" + str(index + 1) + \".docx\")\n      # Gộp doc vào document master sử dụng composer.append()",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "composer",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "composer = Composer(master)\nfile_count = count_files_in_folder(temp_path)\n# Lặp qua từng file trong mảng\nfor index in range(file_count):\n      if index == 0:\n        continue\n      # Tạo một Document từ file_name\n      doc = Document_compose(temp_path + \"/\" + str(index + 1) + \".docx\")\n      # Gộp doc vào document master sử dụng composer.append()\n      composer.append(doc)",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "file_count",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "file_count = count_files_in_folder(temp_path)\n# Lặp qua từng file trong mảng\nfor index in range(file_count):\n      if index == 0:\n        continue\n      # Tạo một Document từ file_name\n      doc = Document_compose(temp_path + \"/\" + str(index + 1) + \".docx\")\n      # Gộp doc vào document master sử dụng composer.append()\n      composer.append(doc)\noutputFileDocPath = output_path + \"/\" + lop + \".docx\"",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "outputFileDocPath",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "outputFileDocPath = output_path + \"/\" + lop + \".docx\"\ncomposer.save(outputFileDocPath)\n# Xóa toàn bộ nội dung trong thư mục\nshutil.rmtree(temp_path)\nprint(\"Đã hoàn thành mẫu nhãn dán cho lớp \" +  lop)\nprint(\"Đang xuất PDF mẫu nhãn dán cho lớp \" +  lop)\noutputFilePdfPath = output_path + \"/\" + lop + \".pdf\"\nconvert(outputFileDocPath,  outputFilePdfPath)",
+        "detail": "src.index",
+        "documentation": {}
+    },
+    {
+        "label": "outputFilePdfPath",
+        "kind": 5,
+        "importPath": "src.index",
+        "description": "src.index",
+        "peekOfCode": "outputFilePdfPath = output_path + \"/\" + lop + \".pdf\"\nconvert(outputFileDocPath,  outputFilePdfPath)",
+        "detail": "src.index",
+        "documentation": {}
+    }
+]
